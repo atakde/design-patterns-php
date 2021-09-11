@@ -45,10 +45,10 @@ class CarBuilder implements VecihleBuilder
     private $vecihle;
     private $options;
 
-    public function __construct(array $opions)
+    public function __construct(array $options)
     {
         $this->vecihle = new Car();
-        $this->options = $opions;
+        $this->options = $options;
     }
 
     public function addEngine()
@@ -78,10 +78,10 @@ class BusBuilder implements VecihleBuilder
     private $vecihle;
     private $options;
 
-    public function __construct(array $opions)
+    public function __construct(array $options)
     {
         $this->vecihle = new Bus();
-        $this->options = $opions;
+        $this->options = $options;
     }
 
     public function addEngine()
@@ -111,10 +111,10 @@ class TruckBuilder implements VecihleBuilder
     private $vecihle;
     private $options;
 
-    public function __construct(array $opions)
+    public function __construct(array $options)
     {
         $this->vecihle = new Truck();
-        $this->options = $opions;
+        $this->options = $options;
     }
 
     public function addEngine()
@@ -150,5 +150,5 @@ class VecihleDirector
     }
 }
 
-$truck = (new VecihleDirector())->build(new TruckBuilder(['engine' => 'benzin', 'wheel' => 14, 'doors' => 2]));
+$truck = (new VecihleDirector())->build(new TruckBuilder(['engine' => 'gasoline', 'wheel' => 14, 'doors' => 2]));
 echo $truck;
