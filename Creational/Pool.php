@@ -46,7 +46,7 @@ class Pool
     public function setFree(WorkerEntity $worker)
     {
         $workerId = $worker->getWorkerId();
-        if ($workerId && array_key_exists($workerId, $this->activeWorkers)) {
+        if (array_key_exists($workerId, $this->activeWorkers)) {
             unset($this->activeWorkers[$workerId]);
             $this->freeWorkers[$workerId] = $worker;
         }
